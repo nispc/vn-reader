@@ -3,7 +3,11 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>
+      {{ folder }}
+      <ion-label (click)="login($event)">Login</ion-label>
+    </ion-title>
+
   </ion-toolbar>
 </ion-header>
 
@@ -15,7 +19,7 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
+    <a class="capitalize" (click)="getWeatherForecast($event)" href="#">{{ folder }}</a>
     <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
     <div *ngFor="let item of items">
       <p>{{ item.date }}</p>

@@ -5,4 +5,5 @@ $ ionic generate page contact
 $ ionic generate component contact/form
 $ ionic generate component login-form --change-detection=OnPush
 $ ionic generate directive ripple --skip-import
+$ ng g @schematics/angular:interceptor
 ```
