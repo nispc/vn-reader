@@ -1,7 +1,7 @@
-import { AuthService } from './../service/auth.service';
+import { AuthService } from './../services/auth.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WeatherForecastService } from '../service/weather-forecast.service';
+import { WeatherForecastService } from '../services/weather-forecast.service';
 
 @Component({
   selector: 'app-folder',
