@@ -141,10 +141,18 @@
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
-      "styleext": "scss"
+      "styleext": "scss",
+      "inlineStyle": true,
+      "skipTests": true,
+      "standalone": true,
+      "flat": true
     },
     "@ionic/angular-toolkit:page": {
-      "styleext": "scss"
+      "styleext": "scss",
+      "inlineStyle": true,
+      "skipTests": true,
+      "standalone": true,
+      "flat": true
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "vn-reader-app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "nessy.ni",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -32,8 +32,8 @@
     "@angular-eslint/builder": "^16.0.0",
     "@angular-eslint/eslint-plugin": "^16.0.0",
     "@angular-eslint/eslint-plugin-template": "^16.0.0",
-    "@angular-eslint/template-parser": "^16.0.0",
     "@angular-eslint/schematics": "^16.0.0",
+    "@angular-eslint/template-parser": "^16.0.0",
     "@angular/cli": "^16.0.0",
     "@angular/compiler-cli": "^16.0.0",
     "@angular/language-service": "^16.0.0",
@@ -57,5 +57,8 @@
     "ts-node": "^8.3.0",
     "typescript": "~5.0.2"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "main": "index.js",
+  "repository": "https://github.com/nispc/vn-reader",
+  "license": "MIT"
 }

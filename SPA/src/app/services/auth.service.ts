@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
@@ -28,6 +28,17 @@ export class AuthService implements OnDestroy {
   }
 
   constructor(private router: Router, private http: HttpClient) {
+
+    const accessToken = localStorage.getItem('access_token');
+    if (accessToken) {
+      const jwtToken = JSON.parse(atob(accessToken.split('.')[1]));
+      this._user.next({username: jwtToken});
+      console.log("???");
+    }
+    else {
+      console.log("???");
+    }
+
     window.addEventListener('storage', this.storageEventListener.bind(this));
   }
 
@@ -50,16 +61,20 @@ export class AuthService implements OnDestroy {
   }
 
   logout() {
-    this.http
-      .post<unknown>(`${this.apiUrl}/logout`, {})
-      .pipe(
-        finalize(() => {
-          this.clearLocalStorage();
-          this._user.next(null);
-          this.router.navigate(['login']);
-        })
-      )
-      .subscribe();
+
+    this.clearLocalStorage();
+    this._user.next(null);
+
+    // this.http
+    //   .post<unknown>(`${this.apiUrl}/logout`, {})
+    //   .pipe(
+    //     finalize(() => {
+    //       this.clearLocalStorage();
+    //       this._user.next(null);
+    //       this.router.navigate(['login']);
+    //     })
+    //   )
+    //   .subscribe();
   }
 
   setLocalStorage(x: LoginResult) {
